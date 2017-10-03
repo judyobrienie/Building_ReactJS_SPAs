@@ -21,23 +21,37 @@ class ContactForm extends React.Component {
     }
 }
 
+
 class Contact extends React.Component {
     render() {
         return (
             <tr >
-                {/* TODO */}
+                <td>
+                    {this.props.contact.name}
+                </td>
+                <td>
+                    {this.props.contact.address}
+                </td>
+                <td>
+                    {this.props.contact.phone_number}
+                </td>
             </tr>
         );
     }
 }
 
+
+
+
 class ContactList extends React.Component {
     render() {
-        var contactRows = null;  // TODO
+        var contactRows = this.props.contacts.map(function(contact) {
+            return <Contact key={contact.name} contact={contact}/>;
+        });
         return (
             <tbody >
                 {contactRows}
-                <ContactForm />
+                <ContactForm contacts={this.props.contacts}/>
             </tbody>
         );
     }
