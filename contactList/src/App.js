@@ -1,21 +1,77 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+class ContactForm extends React.Component {
+    render() {
+        return (
+            <tr>
+                <td>
+                    <input type="text" className="form-control" />
+                </td>
+                <td>
+                    <input type="text" className="form-control" />
+                </td>
+                <td>
+                    <input type="text" className="form-control" />
+                </td>
+                <td>
+                    <input type="button" className="btn btn-primary" value="Add" />
+                </td>
+            </tr>
+        )
+    }
 }
 
-export default App;
+class Contact extends React.Component {
+    render() {
+        return (
+            <tr >
+                {/* TODO */}
+            </tr>
+        );
+    }
+}
+
+class ContactList extends React.Component {
+    render() {
+        var contactRows = null;  // TODO
+        return (
+            <tbody >
+                {contactRows}
+                <ContactForm />
+            </tbody>
+        );
+    }
+}
+
+class ContactsTable extends React.Component {
+    render() {
+        return (
+            <table className="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>   
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+              <ContactList contacts={this.props.contacts} />
+            </table>
+        );
+    }
+}
+
+class ContactsApp extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1>Contact List.</h1>
+                <ContactsTable contacts={this.props.contacts} /> 
+                
+            </div>
+        );
+    }
+}
+
+export default ContactsApp;
