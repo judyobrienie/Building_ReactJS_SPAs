@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './App.css'
 
 class SelectBox extends React.Component {
     render() {
@@ -18,6 +18,21 @@ class SelectBox extends React.Component {
 
 
 // TODO (PhoneItem component)
+class PhoneItem extends React.Component {
+    render() {
+        let list = `phones/${this.props.phone.id}` /*creates link to all phone*/
+        let image = `/phoneSpecs/${this.props.phone.imageUrl}`  /*creates link to all images*/
+        return (
+           <li className='thumbnail phone-listing'>
+                <a href={list} className='thumb'>
+                    <img src={image} alt={this.props.phone.name} />
+                </a>
+                <a href={list}>{this.props.phone.name}</a>
+                <p>{this.props.phone.snippet}</p>
+            </li>
+        )
+    }
+}
 
 
 class FilteredPhoneList extends React.Component {
@@ -43,7 +58,7 @@ class PhoneCatalogueApp extends React.Component {
                     <div className="container-fluid">
                         <div className="row">
                             <SelectBox />
-                            {/* TODO */}
+                            <FilteredPhoneList phones={this.props.phones} /> {/*//renders the phone list to screen*/}
                         </div>
                     </div>
                 </div>
