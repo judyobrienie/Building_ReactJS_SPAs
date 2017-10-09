@@ -17,22 +17,23 @@ class SelectBox extends React.Component {
 }
 
 
-// TODO (PhoneItem component)
 class PhoneItem extends React.Component {
     render() {
-        let list = `phones/${this.props.phone.id}` /*creates link to all phone*/
-        let image = `/phoneSpecs/${this.props.phone.imageUrl}`  /*creates link to all images*/
+        let url = process.env.PUBLIC_URL + '/phoneSpecs/' + this.props.phone.imageUrl;
         return (
-           <li className='thumbnail phone-listing'>
-                <a href={list} className='thumb'>
-                    <img src={image} alt={this.props.phone.name} />
+            <li className="thumbnail phone-listing">
+                <a href={'/phones/' + this.props.phone.id} className="thumb">
+                    <img src={url}
+                        alt={this.props.phone.name} />
                 </a>
-                <a href={list}>{this.props.phone.name}</a>
+                <a href={'/phones/' + this.props.phone.id}> {this.props.phone.name}</a>
                 <p>{this.props.phone.snippet}</p>
             </li>
-        )
+        );
     }
 }
+
+
 
 
 class FilteredPhoneList extends React.Component {

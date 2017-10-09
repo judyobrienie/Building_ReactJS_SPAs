@@ -35,6 +35,12 @@ class Contact extends React.Component {
                 <td>
                     {this.props.contact.phone_number}
                 </td>
+                <td>
+                    <input type="button" className="btn btn-primary" value="Edit" />
+                </td>
+                <td>
+                    <input type="button" className="btn btn-danger" value="Delete" />
+                </td>   
             </tr>
         );
     }
@@ -45,8 +51,9 @@ class Contact extends React.Component {
 
 class ContactList extends React.Component {
     render() {
-        var contactRows = this.props.contacts.map(function(contact) {
-            return <Contact key={contact.name} contact={contact}/>;
+        var contactRows = this.props.contacts.map(
+            function (contact) {
+            return <Contact key={contact.phone_number} contact={contact}/>;
         });
         return (
             <tbody >
@@ -56,6 +63,7 @@ class ContactList extends React.Component {
         );
     }
 }
+
 
 class ContactsTable extends React.Component {
     render() {

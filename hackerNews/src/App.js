@@ -50,16 +50,18 @@ class NewsItem extends React.Component {
     }
 }
 
+
+
 class NewsList extends React.Component {
     render() {
-        let posts = this.props.post.map(function (item) {
-            return <NewsItem key={item.title} post={item} />
+        var items = this.props.posts.map(function (post, index) {
+            return <NewsItem key={index} post={post} />;
         });
         return (
             <div>
-                {posts}
+                {items}
             </div>
-        );                          // TODO (incomplete)
+        );
     }
 }
 

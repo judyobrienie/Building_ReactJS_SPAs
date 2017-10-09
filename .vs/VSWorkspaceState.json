@@ -1,14 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\contactList\\src",
     "\\hackerNews",
     "\\hackerNews\\src",
-    "\\phoneCatalogue\\public\\phoneSpecs",
-    "\\phoneCatalogue\\public\\phoneSpecs\\img",
-    "\\phoneCatalogue\\public\\phoneSpecs\\phones",
-    "\\phoneCatalogue\\src"
+    "\\phoneCatalogue"
   ],
-  "SelectedNode": "\\hackerNews\\src\\index.js",
+  "SelectedNode": "\\npm-debug.log",
   "PreviewInSolutionExplorer": false
 }
